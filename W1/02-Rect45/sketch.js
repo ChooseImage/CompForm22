@@ -25,10 +25,13 @@ function draw() {
 }
 
 function drawRects(){
-  while (n<3){
+  while (n<1000){
     rotate(a);
+    stroke(255);
+    strokeWeight(0.1);
     rect(0, 0, (w-d)/n);
-    n+=1;
-
+    n+=0.002;
+    noFill();
+    
   }
 }
