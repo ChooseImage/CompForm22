@@ -1,9 +1,16 @@
 /*
-This sketch is built following The coding train's coding challenge#85
+This sketch is built upon following The coding train's coding challenge#85
 link => https://thecodingtrain.com/CodingChallenges/085-the-game-of-life.html
 */
 
+let choice = 3;  // 1 = High Bias, 2 = Middle Bias, 3 = Low Bias, 4 = Pure Randomness
+let grid;
+let cols;
+let rows;
+let res = 4;
 
+let w = 600;
+let h = 400;
 
 function make2DArray(cols, rows){
   
@@ -15,14 +22,6 @@ function make2DArray(cols, rows){
   
   return arr;
 }
-
-let grid;
-let cols;
-let rows;
-let res = 10;
-
-let w = 600;
-let h = 400;
 
 function setup() {
   createCanvas(w, h);
@@ -63,12 +62,19 @@ function draw() {
   
   // Compute next based on grid
   
+
   for (let i= 0; i<cols; i ++){
     for (let j = 0; j<rows; j++){
       
-      let state = grid[i][j];
+      // Additional random chances
       
-      //edges will just stay the same
+      let rBig = max(random(10), random(10));
+      let rMid = (random(10) + random(10) + random(10)) / 3;
+      let rSml = min(random(10), random(10), random(10));
+      let choices = [max(random(10), random(10)), (random(10) + random(10) + random(10)) / 3, min(random(10), random(10), random(10)), random(10)]
+  
+      let state = grid[i][j];
+
 
       // Count live neighbors
       let sum = 0;
@@ -80,7 +86,8 @@ function draw() {
         next[i][j] = 1;
       }else if (state ==1 && (neighbors < 2 || neighbors >3) ){
        next[i][j] = 0; 
-      }else{
+      }else if(state==0 && neighbors <=8 && choices[choice-1] >=9.55){
+        next[i][j] = 1}else{
         next[i][j] = state;
       }
     
