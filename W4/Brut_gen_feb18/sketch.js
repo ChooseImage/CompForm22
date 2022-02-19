@@ -28,8 +28,11 @@ let sizeX = 200;
 let sizeY = 30;
 let sizeZ = 80;
 
+let numCols;
+let numRows;
 
-  let winEdge = 5;
+
+
   let winSize = 8;
 
 
@@ -39,107 +42,235 @@ let sizeZ = 80;
   const PARAMS = {
   
     
-    backGroundColor: "#f2d174",
-    BuildingColor:'#e8e3d5',
-    BridgeColor:'#d6d5e8',
+    backGroundColor: "#bfbfef",
+    squareColor: "#FEC5BB",
+    BuildingColor:'#ECE4DB',
+    BridgeColor:'#D8E2DC',
+    WindowColor:'#b5bdd2',
+    Shadow: 20,
     
     Perspective:0.3,
     
-    AposX:160,
-    AHeight:120,
+    AposX:153,
+    AHeight:300,
     Awidth:150,
-    Adepth:100,
+    Adepth:95,
     
     BposX:400,
-    BHeight:320,
+    BHeight:84,
     Bwidth:430,
-    Bdepth:200,  
+    Bdepth:230,  
     
-    Bridges:4,
-    BridgeGap:72
+    Bridges:5,
+    BridgeGap:50,
+    
+    AWindowSize: 45,
+    AWindowRows: 15,
+    AWindowColumns: 3,
+    AWindowsPosX:2,
+    AWindowsPosY:13,
+    
+    BWindowSize: 20,
+    BWindowRows: 27,
+    BWindowColumns: 13,
+    BWindowsPosX:5,
+    BWindowsPosY:0
 };
+
+const color = pane.addFolder({
+  title:"Colors",
+  expanded: false,
+})
+
+const buildA = pane.addFolder({
+  title:"Building A",
+  expanded: false,
+})
+
+const buildB = pane.addFolder({
+  title:"Building B",
+  expanded: false,
+})
+
+const bridges = pane.addFolder({
+  title:"Bridges",
+  expanded: false,
+})
 
 
 function setup() {
   createCanvas(w, h);
   
   
-  pane.addInput(PARAMS, "backGroundColor", {
+  color.addInput(PARAMS, "backGroundColor", {
+    view: "color",
+  });
+
+  color.addInput(PARAMS, "squareColor", {
     view: "color",
   });
   
-  pane.addInput(PARAMS, "BuildingColor", {
+  color.addInput(PARAMS, "BuildingColor", {
     view: "color",
   });
   
-  pane.addInput(PARAMS, "BridgeColor", {
+  color.addInput(PARAMS, "BridgeColor", {
     view: "color",
   });
   
+  color.addInput(PARAMS, "WindowColor", {
+    view: "color",
+  });
   
-    pane.addInput(PARAMS, "Perspective", {
+  color.addInput(PARAMS, "Shadow", {
+    min: 0,
+    max: 100,
+  });
+  
+  
+  pane.addInput(PARAMS, "Perspective", {
     min: 0,
     max: 0.8,
   });
   
   
   
-  pane.addInput(PARAMS, "AposX", {
+  buildA.addInput(PARAMS, "AposX", {
     min: 100,
     max: 210,
   });
   
 
-  pane.addInput(PARAMS, "AHeight", {
+  buildA.addInput(PARAMS, "AHeight", {
     min: 5,
     max: 300,
   });
-  pane.addInput(PARAMS, "Awidth", {
+  buildA.addInput(PARAMS, "Awidth", {
     min: 70,
     max: 150,
   });
-  pane.addInput(PARAMS, "Adepth", {
+  buildA.addInput(PARAMS, "Adepth", {
     min: 80,
     max: 150,
   });
 
   
   
-  pane.addInput(PARAMS, "BposX", {
+  buildB.addInput(PARAMS, "BposX", {
     min: 350,
     max: 450,
   });
-  pane.addInput(PARAMS, "BHeight", {
+  buildB.addInput(PARAMS, "BHeight", {
     min: 50,
     max: 400,
   });
-  pane.addInput(PARAMS, "Bwidth", {
+  buildB.addInput(PARAMS, "Bwidth", {
     min: 90,
     max: 450,
   });
-  pane.addInput(PARAMS, "Bdepth", {
+  buildB.addInput(PARAMS, "Bdepth", {
     min: 100,
     max: 350,
   });
 
 
-  pane.addInput(PARAMS, 'Bridges', {
+  bridges.addInput(PARAMS, 'Bridges', {
   step: 1,
   min: 0,
   max: 6,
 });
   
-  pane.addInput(PARAMS, 'BridgeGap', {
+  bridges.addInput(PARAMS, 'BridgeGap', {
   
   min: 45,
   max: 180,
 });
+  
+  buildA.addInput(PARAMS, "AWindowSize", {
+    min: 0,
+    max: 50,
+  });
+  
+  
+  
+  buildA.addInput(PARAMS, "AWindowRows", {
+    step: 1,
+    min: 0,
+    max: 200,
+  });
+  
 
+  buildA.addInput(PARAMS, "AWindowColumns", {
+    step: 1,
+    min: 0,
+    max: 9,
+  });
+
+  buildA.addInput(PARAMS, "AWindowsPosX", {
+    step:1,
+    min: 1,
+    max: 60,
+  });
+  buildA.addInput(PARAMS, "AWindowsPosY", {
+    min: 0,
+    max: 600,
+  });
+  
+  buildB.addInput(PARAMS, "BWindowSize", {
+    min: 0,
+    max: 50,
+  });
+  
+  
+  
+  buildB.addInput(PARAMS, "BWindowRows", {
+    step: 1,
+    min: 0,
+    max: 80,
+  });
+  
+
+  buildB.addInput(PARAMS, "BWindowColumns", {
+    step: 1,
+    min: 0,
+    max: 200,
+  });
+
+  buildB.addInput(PARAMS, "BWindowsPosX", {
+    step:1,
+    min: 1,
+    max: 60,
+  });
+  buildB.addInput(PARAMS, "BWindowsPosY", {
+    min: 0,
+    max: 600,
+  });
   
 }
 
 function draw() {
+  
   background(PARAMS.backGroundColor);
+  //rect(0,0,w,h);
+  
+  translate(100, 100);
+  
+  drawStuff();
+  
+  
+  
+}
+
+
+
+function drawStuff(){
+    let outofBoundsA = PARAMS.Awidth<PARAMS.AWindowSize*PARAMS.AWindowColumns;
+   let outofBoundsB = PARAMS.Bwidth<PARAMS.BWindowSize*PARAMS.BWindowColumns;
+  
+  fill(PARAMS.squareColor);
+  rect(0,0,600);
+  
+
   
   off = PARAMS.Perspective;
   
@@ -154,11 +285,23 @@ function draw() {
   //Front
   drawUnit(PARAMS.AposX, PARAMS.AHeight, PARAMS.Awidth, PARAMS.Adepth);
   
-    let numCols = floor(PARAMS.Awidth/winSize);
-  let numRows = floor(PARAMS.AHeight/winSize);
+
   
-  makeWindow(numCols, numRows, 0);
+  numCols = 100;
+  numRows = 200;
+  winSize = 20;
+
+  if(!outofBoundsB){
+  makeWindow(PARAMS.BposX, PARAMS.BHeight,PARAMS.BWindowColumns, PARAMS.BWindowRows, PARAMS.BWindowSize, 1, PARAMS.BWindowsPosX, PARAMS.BWindowsPosY);
+  }else return;
+  
+  if(!outofBoundsA){
+    makeWindow(PARAMS.AposX, PARAMS.AHeight,PARAMS.AWindowColumns, PARAMS.AWindowRows, PARAMS.AWindowSize, 1, PARAMS.AWindowsPosX, PARAMS.AWindowsPosY);
+  }else return;
 }
+
+
+
 
 function howManyBridge(n, d){
   
@@ -246,7 +389,7 @@ function drawUnit(x1, y1, w1/*width*/, w2/*depth*/){
   //pop();
   
   push();
-  fill(0, 70);
+  fill(0, PARAMS.Shadow);
   
   beginShape();
   vertex(I1, J1);
@@ -256,92 +399,6 @@ function drawUnit(x1, y1, w1/*width*/, w2/*depth*/){
   endShape();
   pop();
   
-    // Front detail
-//   let gap = w1*0.15;
-//   fill(180);
-
-//   vertex(x1+gap, y1+gap);  // TOP LEFT
-//   vertex(x1+w1-gap, y1+w1*offgap);  // TOP RIGHT
-//   vertex(x1+w1-gap, y1+h1+w1*off);  // BOT RIGHT
-//   vertex(x1+gap, y1+h1);  // BOT LEFT
-//   endShape();
-  
-  
-//Work in progress
-  //Window
-
-  
-//   push();
-//   fill(255);
-//   for(let col = 0; col<numCols; col++){
-//     for(let row = 0; row<numRows; row++){
-      
-//       let u1, o1, u2, o2, o3, o4;
-      
-//       u1 = x1+winEdge+winSize*col;
-//       o1 = y1+winEdge+winSize*row+winSize*col*off;
-//       u2 = u1+winSize; 
-//       o2 = o1+winSize;
-//       o4 = o1+winSize*off;
-//       o3 = o4+winSize;
-      
-      
-      
-      
-// //       let x2 = 
-      
-//       beginShape();
-//       vertex(u1,o1);
-//       vertex(u1,o2);
-//       vertex(u2,o3);
-//       vertex(u2,o4);
-//       endShape();
-//     }
-//   }
-//   pop();
-  
-  /*
-  Oliviers window
-  
-  function drawWindows (wallWidth,winH,buildingH,c1,c2,shift,isRight = false) {
-    
-  let windowMargin = wallWidth*0.05;
-  const winW = wallWidth / windowColumns - windowMargin/2;
-  
-  for ( let col = 0; col < windowColumns; col++ ){
-    for ( let row = 0; row < windowRows; row++ ){
-  
-      fill( lerpColor( color(c1), color(c2), random() ) );
-      
-      if( random() < 0.6 ){
-        
-        const x1 = winW * col + windowMargin;
-        const x2 = x1 + winW - windowMargin;
-              
-        const yOffset = isRight ? lerp( 0, shift, x1/wallWidth ) : lerp( shift, 0, x1/wallWidth );
-        const yOffset2 = isRight ? lerp( 0, shift, x2/wallWidth ) : lerp( shift, 0, x2/wallWidth );
-    
-        const y1 = -buildingH + yOffset + winH * row + windowMargin;
-        const y2 = y1 + winH - windowMargin;
-        const y4 = -buildingH + yOffset2 + winH * row + windowMargin;
-        const y3 = y4 + winH - windowMargin;
-
-
-        beginShape();
-        vertex( x1, y1 );
-        vertex( x1, y2 );
-        vertex( x2, y3 );
-        vertex( x2, y4 );
-        endShape();
-      }
-    }
-  }   
-}
-
-*/
-  
-  
-
 }
 
 function drawLink(x, y, xGap, yGap, sizeX, sizeY, sizeZ){
@@ -400,7 +457,7 @@ function drawLink(x, y, xGap, yGap, sizeX, sizeY, sizeZ){
   
   
   push();
-  fill(0,70);
+  fill(0,PARAMS.Shadow);
     beginShape();
   vertex(N1, M1); // TOP RIGHT
   vertex(N2, M2); // BOT RIGHT
@@ -411,33 +468,35 @@ function drawLink(x, y, xGap, yGap, sizeX, sizeY, sizeZ){
   pop();
 }
   
-  function makeWindow(numCols, numRows, margin){
+  function makeWindow(x, y, numCols, numRows, winSize, margin, firstCol, offY){
     
-      push();
-  fill(170);
-  stroke(200);
-  for(let col = 0; col<numCols; col++){
+  let winEdgeX = margin;
+  let winEdgeY = offY;
+    
+ 
+  //print(outofBounds);
+    
+  push();
+  fill(PARAMS.WindowColor);
+    noStroke();
+  //stroke(200);
+  for(let col = firstCol; col<numCols; col++){
     for(let row = 0; row<numRows; row++){
       
       let u1, o1, u2, o2, o3, o4;
       
-      u1 = x1+winEdge+winSize*col;
-      o1 = y1+winEdge+winSize*row+winSize*col*off;
+      u1 = x+winEdgeX+winSize*col;
+      o1 = y+winEdgeY+winSize*row+winSize*col*off;
       u2 = u1+winSize; 
       o2 = o1+winSize;
       o4 = o1+winSize*off;
       o3 = o4+winSize;
       
-      
-      
-      
-//       let x2 = 
-      
       beginShape();
       vertex(u1,o1);
-      vertex(u1,o2);
-      vertex(u2,o3);
-      vertex(u2,o4);
+      vertex(u1,o2-margin);
+      vertex(u2-margin,o3-margin);
+      vertex(u2-margin,o4);
       endShape();
     }
   }
@@ -448,4 +507,3 @@ function drawLink(x, y, xGap, yGap, sizeX, sizeY, sizeZ){
 // function mouseReleased() {
 //   save('Brut_gen' + hour() + minute() + second() + '.jpg')
 // }
-  
