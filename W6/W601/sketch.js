@@ -1,11 +1,11 @@
-var bounds = new Rectangle(new Point(0, 0), new Point(view.size._width, view.size._height));
+var bounds = new Rectangle(new Point(0, 0), new Point(800, 800));
 var rectangle = new Path.Rectangle(bounds);
 rectangle.fillColor = "#0d046e";
 
 
-var sizeX = view.size._width;
-var sizeY = view.size._height;
-var center = new Point(view.size._width/2, view.size._height/2);
+var sizeX = 800;
+var sizeY = 800;
+var center = new Point(800/2, 800/2);
 console.log(center);
 //var sides = 6;
 

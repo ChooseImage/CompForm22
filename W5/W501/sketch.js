@@ -9,6 +9,7 @@ function setup() {
   angleMode(RADIANS);
   X = random(width);
   Y = random(height);
+  console.log('loaded');
 }
 
 function draw() {
@@ -17,6 +18,7 @@ function draw() {
   drawQuick(gradientSlope);
   
   noLoop();
+
 }
 
 let drawQuick = (power) => {
