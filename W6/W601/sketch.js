@@ -31,7 +31,7 @@ function drawUnit(pos, a, r, sides){
 function render(pos, sides, phase){
   
   for (var i = 0; i< 80; i+=1){
-    drawUnit(pos, i, Math.cos(i*phase)*40, sides);
+    drawUnit(pos, i, Math.cos(i*phase)*30, sides);
   }
 
 }
