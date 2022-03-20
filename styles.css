@@ -5,31 +5,50 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(19, 19, 19);
+    background-color: rgb(231, 229, 225);
   }
   
   .sketches {
     display: block;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
+  }
+
+  .sketch {
+    margin-bottom:6%;
+
   }
   
+  .sketch a {
+    font-family: monospace;
+    text-decoration: none;
+    color: rgb(68, 68, 68);
+  }
+
   iframe  {
+    margin-bottom: 3%;
+    background-color: rgb(219, 219, 219);
     display: block;
     align-items: center;
     justify-content: center;
     width:800px;
     height:800px;
     padding:5%;
+    box-shadow: 5px 10px 8px #888888;
   }
 
   img  {
+    background-color: rgb(219, 219, 219);
+    margin-bottom: 3%;
+
+
     display: block;
     align-items: center;
     justify-content: center;
     width:800px;
     height:800px;
     padding:5%;
+    box-shadow: 5px 10px 8px #888888;
+
   }
   
   #w501 {
