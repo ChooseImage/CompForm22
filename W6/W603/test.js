@@ -19,12 +19,14 @@ var rectangle = new Path.Rectangle(bounds);
 var bleed = 40;
 resX = 50;
 resY = 10;
-for (var x = bleed; x < _W-bleed-resX; x += resX) {
-  for (var y = bleed; y < _H-bleed-resY; y += resY) {
+
+
+for (var x = 0; x < _W; x += resX) {
+  for (var y = 0; y < _H; y += resY) {
     custom_line({
       Point_a: new Point(x, y + 1),
       Point_b: new Point(x + resX, y +1 ),
-      nsegments: (Math.sin(x/resX)+1)*15,
+      nsegments: (Math.sin(x/resX)+1)*45,
       wobble: Math.cos(x/90)*5,
       stroke_width: 0.05 * Math.abs(Math.tan(x/90)),
       stroke_color: '#FF5A5F',
@@ -39,6 +41,30 @@ for (var x = bleed; x < _W-bleed-resX; x += resX) {
     });
   }
 }
+
+
+
+
+// for (var x = bleed; x < _W-bleed-resX; x += resX) {
+//   for (var y = bleed; y < _H-bleed-resY; y += resY) {
+//     custom_line({
+//       Point_a: new Point(x, y + 1),
+//       Point_b: new Point(x + resX, y +1 ),
+//       nsegments: (Math.sin(x/resX)+1)*15,
+//       wobble: Math.cos(x/90)*5,
+//       stroke_width: 0.05 * Math.abs(Math.tan(x/90)),
+//       stroke_color: '#FF5A5F',
+//     //   stroke_color: {
+//     //     gradient: {
+//     //         stops: [colors[1], colors[3], colors[0], colors[2]]
+//     //     },
+//     //     origin: topLeft,
+//     //     destination: bottomRight
+//     //   },
+//       stroke_cap: 'round',
+//     });
+//   }
+// }
 
 // for (var x = 0; x < _W; x += resX) {
 //     for (var y = 0; y < _H; y += resY) {

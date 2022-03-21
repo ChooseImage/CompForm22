@@ -40,14 +40,16 @@ resY = 10;
 //   }
 // }
 
-for (var x = 0; x < _W; x += resX) {
-    for (var y = 0; y < _H; y += resY) {
+var bleed = 40;
+
+for (var x = 0; x < _W-bleed-resX; x += resX) {
+    for (var y = bleed; y < _H-bleed-resY; y += resY) {
       custom_line({
         Point_a: new Point(x, y + 1),
         Point_b: new Point(x + resX, y +1 ),
-        nsegments: (Math.sin(x/resX)+1)*45,
-        wobble: Math.cos(y/90)*12,
-        stroke_width: 0.05 * Math.abs(Math.tan(x/90)),
+        nsegments: (Math.sin(x/resX)+1)*70,
+        wobble: Math.cos(y/90)*6,
+        stroke_width: 0.035 * Math.abs(Math.tan(x/90)),
         stroke_color: colors[2],
       //   stroke_color: {
       //     gradient: {
