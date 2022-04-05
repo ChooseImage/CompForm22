@@ -7,7 +7,7 @@ let P1 = 50;
 let P2 = 38;
 let N = 120;
 let FontSize = 15;
-const EXPORT = true;
+const EXPORT = false;
 
 function setup() {
 
@@ -52,9 +52,9 @@ function draw() {
     saveFrame("Bumper", frameCount, "jpg", 90);
   }
   
-  if(frameCount > 90){
-    noLoop();
-  }
+  // if(frameCount > 90){
+  //   noLoop();
+  // }
 
 
 }
