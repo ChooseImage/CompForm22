@@ -53,7 +53,7 @@ let h1 = 5;
 
 function setup() {
   angleMode(DEGREES);
-  createCanvas(600, 600);
+  createCanvas(800, 800);
   t=0;
   noStroke();
 }
@@ -112,7 +112,7 @@ function draw() {
   }
     t+= 0.005;
   
-  drawFrame();
+  //drawFrame();
   
   
     if (EXPORT) {
@@ -191,12 +191,12 @@ const drawLine = () => {
    speed = SPEED;
   
    r = R;
-   h = 5;  
+   h = 2;  
    d = D;
   }
 
   let cX = width/2;
-  let cY = height/4-20;
+  let cY = height/4;
   
   let w = 20;         // 1/2 Line width
 
@@ -278,7 +278,7 @@ const drawLine1 = () => {
   
   
   let cX = width/2;
-  let cY = height/4-20;
+  let cY = height/4;
   
   let w = 20;         // 1/2 Line width
   let sx = 10;       // Shift amount of top x and bottom x
@@ -347,4 +347,3 @@ function saveFrame(name, frameNumber, extension, maxFrame) {
 
   save(name + "_" + paddedNumber + "." + extension);
 }
-
