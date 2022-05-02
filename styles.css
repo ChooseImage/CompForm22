@@ -24,6 +24,15 @@ body {
     color: rgb(68, 68, 68);
   }
 
+  p {
+    font-family: monospace;
+    font-weight: 600;
+    font-size:16px;
+    padding-bottom:15px;
+    text-decoration: none;
+    color: rgb(68, 68, 68);
+  }
+
   iframe  {
     margin-bottom: 3%;
     background-color: rgb(219, 219, 219);
