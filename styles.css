@@ -36,6 +36,19 @@ body {
     box-shadow: 5px 10px 8px #888888;
   }
 
+  #drag {
+
+    margin-bottom: 3%;
+    background-color: rgb(219, 219, 219);
+    display: block;
+    align-items: center;
+    justify-content: center;
+    width:900px;
+    height:600px;
+    padding:5%;
+    box-shadow: 5px 10px 8px #888888;
+  }
+
   img  {
     background-color: rgb(219, 219, 219);
     margin-bottom: 3%;
