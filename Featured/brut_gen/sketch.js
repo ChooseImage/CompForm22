@@ -141,8 +141,14 @@ function setup() {
     min: 0,
     max: 0.45,
   });
+
+  const btn = pane.addButton({
+    title: 'Save Image'
+  });
   
-  
+  btn.on('click', () => {
+    save('Bru-gen' + hour() + minute() + second() + '.jpg')
+  });
   
   buildA.addInput(PARAMS, "AposX", {
     min: 100,
