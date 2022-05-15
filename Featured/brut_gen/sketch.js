@@ -45,8 +45,8 @@ let numRows;
   // Tweakpane params
   
   const PARAMS = {
-  
     
+    Grain: 127,
     backGroundColor: "#bfbfef",
     squareColor: "#FEC5BB",
     BuildingColor:'#ECE4DB',
@@ -106,7 +106,11 @@ const bridges = pane.addFolder({
 function setup() {
   createCanvas(w, h);
   
-  
+  color.addInput(PARAMS, "Grain", {
+    min: 0,
+    max: 255,
+  });
+
   color.addInput(PARAMS, "backGroundColor", {
     view: "color",
   });
@@ -135,7 +139,7 @@ function setup() {
   
   pane.addInput(PARAMS, "Perspective", {
     min: 0,
-    max: 0.8,
+    max: 0.45,
   });
   
   
@@ -267,8 +271,8 @@ function draw() {
   push();
   background(PARAMS.backGroundColor);
   drawStuff();
-  blendMode(SOFT_LIGHT );
-  tint(255, 127);
+  blendMode(SOFT_LIGHT);
+  tint(255, PARAMS.Grain);
 	image(img, -200, -200); //Load grain img with 50% opacity
 	pop();
 }
