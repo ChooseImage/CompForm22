@@ -49,6 +49,17 @@ body {
 
 #imgs {
   border-bottom: none;
+    width:830px;
+  height:auto;
+  margin:auto;
+  /* margin-bottom:14%; */
+  padding:auto;  
+  padding-top:20px;
+  padding-bottom:20px;
+  border-right: 4px solid var(--charcoal);
+  border-left:4px solid var(--charcoal);
+  height:auto;
+  background-color: var(--beige);
 }
 
 #label {
