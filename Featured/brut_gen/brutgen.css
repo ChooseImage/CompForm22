@@ -1,0 +1,157 @@
+@font-face { font-family: Porter; src: url('./Porter\ Bold\ DEMO\ 700.ttf'); } 
+
+:root {
+  --darkgrey: #3f3f3f;
+  --white: hsl(30, 67%, 94%); 
+  --beige: #f7f6ea;
+  --charcoal: #264653ff;
+  --persiangreen: #2a9d8fff;
+  --maizecrayola: #e9c46aff;
+  --sandybrown: #f4a261ff;
+  --burntsienna: #e76f51ff;
+}
+
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+    height:100%;
+}
+
+body {
+  background-color:var(--beige);
+}
+
+.center-80 {
+  width:80%;
+  margin-left:10%;
+}
+
+.center-60 {
+  width:60%;
+  margin-left:20%;
+}
+
+#center-800 {
+  width:800px;
+  margin:auto;
+  margin-top:20px;
+  margin-bottom:20px;
+}
+
+#center-800 > * {
+  padding-top: 20px 0;
+}
+
+#imgs > * {
+  padding-bottom: 10px;
+}
+
+#imgs {
+  border-bottom: none;
+}
+
+#label {
+  margin-top: -40px;
+  padding-top:70px;
+  border-top: 2px solid var(--);
+  border-bottom:4px solid var(--charcoal);
+  height:auto;
+  background-color: var(--sandybrown);
+}
+
+#g-label {
+
+  padding-top:30px;
+  border-top: 4px solid var(--charcoal);
+  height:auto;
+  background-color: var(--sandybrown);
+}
+
+p {
+  font-family: Arial, Helvetica, sans-serifa;
+  font-weight: 600;
+  font-size:16px;
+  text-decoration: none;
+  color: var(--charcoal);
+  line-height: 170%;;
+}
+
+a {
+  text-decoration: none;
+  color: var(--burntsienna);
+  font-weight:900;
+}
+
+a:hover {
+  text-decoration: none;
+  color: var(--darkgrey);
+  font-weight:900;
+  background-color: var(--beige);
+}
+
+
+#description {
+  width:830px;
+  height:auto;
+  margin:auto;
+  /* margin-bottom:14%; */
+  padding-left:15px;
+  padding-right:15px;
+  padding-top:20px;
+  padding-bottom:20px;
+  border-right: 4px solid var(--charcoal);
+  border-left:4px solid var(--charcoal);
+  height:auto;
+  background-color: var(--beige);
+}
+
+
+.center-900 {
+  width:830px;
+  height:auto;
+  margin:auto;
+  /* margin-bottom:14%; */
+  padding-left:15px;
+  padding-right:15px;
+  padding-top:20px;
+  padding-bottom:20px;
+  border-left:4px solid var(--charcoal);
+  border-right:4px solid var(--charcoal);
+  border-bottom:4px solid var(--charcoal);
+  background-color: var(----beige);
+}
+
+
+.row {
+  display: flex;
+  height:900px;
+}
+
+
+.col-30 {
+  padding:50px;
+  flex: 30%;
+  border: solid 1px var(--charcoal);
+}
+
+.col-70 {
+  padding:5%;
+  flex: 70%;
+  border: solid 1px var(--charcoal);
+}
+
+
+
+h2 {
+  font-family: Porter;
+  color: var(--charcoal);
+  font-size: 36px;
+  text-align: center;
+}
+
+iframe  {
+
+  height:800px;
+  /* box-shadow: 5px 10px 8px #888888; */
+}

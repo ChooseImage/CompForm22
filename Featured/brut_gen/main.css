@@ -1,0 +1,73 @@
+@font-face { font-family: Porter; src: url('./Porter\ Bold\ DEMO\ 700.ttf'); } 
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+
+.main {
+    margin-top: 10%;
+}
+
+h2 {
+    font-family: Porter;
+    transform: rotate(-90deg); 
+    margin-top:100px;
+  }
+  
+
+  .sketch {
+    margin-bottom:6%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sketch a {
+    font-family: monospace;
+    text-decoration: none;
+    color: rgb(68, 68, 68);
+  }
+
+  p {
+    font-family: monospace;
+    font-weight: 600;
+    font-size:16px;
+    
+    text-decoration: none;
+    color: rgb(68, 68, 68);
+  }
+
+  iframe  {
+    margin: auto;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    width:800px;
+    height:800px;
+    /* box-shadow: 5px 10px 8px #888888; */
+  }
+
+  #drag {
+    margin-bottom: 3%;
+    background-color: rgb(219, 219, 219);
+    display: block;
+    align-items: center;
+    justify-content: center;
+    width:900px;
+    height:600px;
+    box-shadow: 5px 10px 8px #888888;
+  }
+
+  img  {
+    
+    margin-bottom: 3%;
+
+
+    display: block;
+    align-items: center;
+    justify-content: center;
+    width:800px;
+    height:800px;
+    box-shadow: 5px 10px 8px #888888;
+
+  }
