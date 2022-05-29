@@ -46,40 +46,40 @@ let numRows;
   
   const PARAMS = {
     
-    Grain: 127,
-    backGroundColor: "#bfbfef",
-    squareColor: "#FEC5BB",
-    BuildingColor:'#ECE4DB',
-    BridgeColor:'#D8E2DC',
-    WindowColor:'#b5bdd2',
-    Shadow: 20,
+    Grain: 152,
+    backGroundColor: "#7878cf",
+    squareColor: "#485b58",
+    BuildingColor:'#ff957a',
+    BridgeColor:'#939a81',
+    WindowColor:'#698ae3',
+    Shadow: 80,
     
-    Perspective:0.3,
+    Perspective:0.33,
     
-    AposX:153,
-    AHeight:300,
-    Awidth:150,
-    Adepth:95,
+    AposX:145,
+    AHeight:18,
+    Awidth:127,
+    Adepth:85.36,
     
-    BposX:400,
-    BHeight:84,
-    Bwidth:430,
-    Bdepth:230,  
+    BposX:350.00,
+    BHeight:362.08,
+    Bwidth:231.04,
+    Bdepth:214.24,  
     
-    Bridges:5,
-    BridgeGap:50,
+    Bridges:2,
+    BridgeGap:45,
     
-    AWindowSize: 45,
-    AWindowRows: 15,
+    AWindowSize: 21.76,
+    AWindowRows: 20,
     AWindowColumns: 3,
-    AWindowsPosX:2,
-    AWindowsPosY:13,
+    AWindowsPosX:1,
+    AWindowsPosY:19.90,
     
-    BWindowSize: 20,
+    BWindowSize: 13.07,
     BWindowRows: 27,
-    BWindowColumns: 13,
-    BWindowsPosX:5,
-    BWindowsPosY:0
+    BWindowColumns: 15,
+    BWindowsPosX:7,
+    BWindowsPosY:104.66
 };
 
 const color = pane.addFolder({
