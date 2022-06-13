@@ -1,0 +1,67 @@
+h2 {
+    font-family: 'Press Start 2P', cursive;
+    color:white;
+    font-style: italic;
+    color: #f2045b;
+    font-size: 2.5rem;
+}
+p {
+    font-family: 'Press Start 2P', cursive;
+    color:#f2045b;
+}
+
+a {
+    font-family: 'Press Start 2P', cursive;
+    color:white;
+}
+
+
+.heading {
+    border-radius: 15px;
+    background: #f7b538;
+    padding:5px;
+    width:900 px;
+    margin-bottom:10px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #f2045b;
+}
+
+body {
+    width:auto;
+    margin: auto;
+    padding: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#270089;
+    border-right:70px solid #f2045b;
+    border-left:70px solid #f2045b;
+}
+
+
+.sketches {
+    display: block;
+    text-align: center;
+
+}
+
+
+iframe {
+    background-color: aquamarine;
+    border-radius: 15px;
+    width:900px;
+    height:600px;
+}
+
+#drag {
+
+    margin-bottom: 3%;
+    background-color: #f2045b;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    width:900px;
+    height:600px;
+    padding:5px
+  }
