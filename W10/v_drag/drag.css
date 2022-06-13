@@ -18,7 +18,7 @@ a {
 
 .heading {
     border-radius: 15px;
-    background: #f7b538;
+    background: #ffd900;
     padding:5px;
     width:900 px;
     margin-bottom:10px;
@@ -43,7 +43,6 @@ body {
 .sketches {
     display: block;
     text-align: center;
-
 }
 
 
@@ -55,13 +54,40 @@ iframe {
 }
 
 #drag {
-
-    margin-bottom: 3%;
     background-color: #f2045b;
     display: block;
     align-items: center;
     justify-content: center;
     width:900px;
     height:600px;
-    padding:5px
+    padding:5px;
+    margin-bottom:10px;
   }
+
+#description {
+    background-color:#270089;
+    padding:30px;
+    width:840px;
+    margin:0;
+    text-align: left;
+}
+
+#description p{
+    color: white;
+    font-size: 0.7rem;
+    line-height: 140%;
+    margin-top:20px;
+}
+
+#description a{
+    color:#ffd900;
+    font-size: 0.7rem;
+    line-height: 200%;
+    margin-top:20px;
+}
+
+#description a:hover{
+    color:#f2045b;
+    transition-delay: 0.1s;
+}
+
