@@ -52,11 +52,18 @@ body {
 }
 
 
+
+
 iframe {
     background-color: aquamarine;
     border-radius: 15px;
     width:900px;
     height:600px;
+}
+
+.heading iframe{
+    width:840px;
+    background-color: #270089;
 }
 
 #drag {
