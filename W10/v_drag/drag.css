@@ -5,6 +5,12 @@ h2 {
     color: #f2045b;
     font-size: 2.5rem;
 }
+
+h5 {
+    font-family: 'Press Start 2P', cursive;
+    color: #f2045b;
+    font-size: 0.8rem;
+}
 p {
     font-family: 'Press Start 2P', cursive;
     color:#f2045b;
@@ -70,6 +76,21 @@ iframe {
     width:840px;
     margin:0;
     text-align: left;
+}
+
+
+#demo {
+    background-color:#270089;
+    padding:30px;
+    width:840px;
+    margin:0;
+    margin-top:10px;
+    text-align: left;
+}
+
+video{
+    border-radius: 15px;
+    margin-top:20px;
 }
 
 #description p{
